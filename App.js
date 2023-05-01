@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { Alert, FlatList, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react/cjs/react.production.min';
 import Header from './components/header';
 import TodoItems from './components/items';
@@ -39,7 +39,10 @@ export default function App() {
     }
     else 
     {
-      Alert.alert('Task should be atleast 3 letters long');
+
+      Alert.alert('Task should be atleast 3 letters long', [
+        {text: "OK", onPress: () => console.log("Window closed")}
+      ]);
     }
    }
   return (
